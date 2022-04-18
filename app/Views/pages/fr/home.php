@@ -4,13 +4,17 @@
     <div class="container">
         <div class="row justify-content-center">
             <div class="col-lg-7 text-center">
-                <span class="subheading d-block mb-2 text-uppercase" data-aos="fade-up">Welcome To Our Site</span>
-                <h1 class="heading mb-4" data-aos="fade-up" data-aos-delay="100">We have the best solution for your
-                    business to grow.</h1>
-                <p class="w-75 mx-auto mb-5" data-aos="fade-up" data-aos-delay="200">Far far away, behind the word
-                    mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
-                <p data-aos="fade-up" data-aos-delay="300"><a href="#" class="btn btn-primary">Get started</a></p>
+                <h1 class="heading mb-4" data-aos="fade-up" data-aos-delay="100">Nous avons la meilleure solution pour la croissance de votre entreprise.</h1>
+                <p class="w-75 mx-auto mb-5" data-aos="fade-up" data-aos-delay="200">Par des solutions informatiques intélligentes et évolutives, nous améliorons la gestion quotidienne des activités au sein des organisations et au près des personnes privées.</p>
+                <p data-aos="fade-up" data-aos-delay="300"><a href="<?= site_url('about')?>" title="En savoir plus sur les solutions que nous concevons" class="btn btn-primary">En savoir plus</a></p>
             </div>
+            <?php if(!$isMobile ): ?>
+                <div class="col-lg-3">
+                    <div class="img-fluid rounded">
+                        <?= img('public/assets/images/afrins_student_bg_dark.webp','', 'class="img-fluid" alt="Afrinewsoft home picture" data-aos="fade-up"  data-aos-delay="200" style="border-radius:5px"')?>
+                    </div>
+                </div>
+            <?php endif; ?>
         </div>
     </div>
 </div>
@@ -18,15 +22,14 @@
     <div class="container">
         <div class="row g-0 align-items-stretch">
             <div class="col-lg-6" data-aos="fade-right">
-                <div class="img-wrap">
-                    <img src="images/img_1.jpg" alt="Image" class="img-fluid">
+                <div class="img">
+                    <?= img('public/assets/images/peoples/afrinewsoft_erickbanze.webp','', 'class="img-fluid" alt="Afrinewsoft home picture"')?>
                 </div>
             </div>
             <div class="col-lg-6 align-self-end" data-aos="fade-up" data-aos-delay="100">
                 <div class="box h-100">
-                    <p class="mb-5">Far far away, behind the word mountains, far from the countries Vokalia and
-                        Consonantia, there live the blind texts.</p>
-                    <p><a href="#" class="btn btn-outline-dark-bg has-arrow">About us <span class="icon-keyboard_backspace"></span></a></p>
+                    <p class="mb-5">Afrinewsoft conçoit des logiciels informatiques, des sites web, et vous fournit également des services dans le marketing digital, la photographie événementielle...</p>
+                    <p><a href="<?= site_url('about') ?>" title="A propos d'Afrinewsoft" class="btn btn-outline-dark-bg has-arrow">A propos de nous <span class="icon-keyboard_backspace"></span></a></p>
                 </div>
             </div>
         </div>
@@ -37,9 +40,10 @@
         <div class="row">
             <div class="col-lg-3 ms-auto">
                 <div class="aside-box" data-aos="fade-up">
-                    <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia,
-                        there live the blind texts.</p>
-                    <div class="d-flex d-lg-block w-50 justify-content-between">
+                    <p>Profitez de notre expérience et savoir-faire dans le développement des solutions numériques 
+                        et dans la fourniture des services liés aux technologies informatiques
+                         .</p>
+                    <!-- <div class="d-flex d-lg-block w-50 justify-content-between">
                         <div class="counter" data-aos="fade-up" data-aos-delay="100">
                             <strong class="countup">12</strong>
                             <span>Years of experience</span>
@@ -48,23 +52,32 @@
                             <strong class="countup">34</strong>
                             <span>Team members</span>
                         </div>
-                    </div>
-                    <p data-aos="fade-up" data-aos-delay="300"><a href="#" class="btn btn-outline-light-bg has-arrow">Why Stodeo <span class="icon-keyboard_backspace"></span></a></p>
+                    </div> -->
+                    
+                    <p data-aos="fade-up" data-aos-delay="300"><a href="<?= site_url('why')?>" title="Pourquoi afrinewsoft" class="btn btn-outline-light-bg has-arrow">Pourquoi Afrinewsoft <span class="icon-keyboard_backspace"></span></a></p>
                 </div>
             </div>
             <div class="col-lg-9 ms-auto">
                 <div class="box">
-                    <div class="box-inner">
+                    <div class="box-inner py-0">
                         <div class="row justify-content-center">
-                            <div class="col-lg-10">
-                                <span class="subheading d-block mb-3 text-uppercase" data-aos="fade-up">Why
-                                    Stodeo?</span>
-                                <h2 class="heading mb-4" data-aos="fade-up" data-aos-delay="100">You still thinking
-                                    about why you should choose us?</h2>
-                                <p data-aos="fade-up" data-aos-delay="200">Far far away, behind the word mountains,
-                                    far from the countries Vokalia and Consonantia, there live the blind texts.
-                                    Separated they live in Bookmarksgrove right at the coast of the Semantics, a
-                                    large language ocean.</p>
+                            <div class="col-lg-10 mt-5 p-2">
+                                <span class="subheading d-block mb-3 text-uppercase" data-aos="fade-up">
+                                    Pourquoi Afrinewsoft ?</span>
+                                <h2 class="heading mb-4" data-aos="fade-up" data-aos-delay="100">Vous vous demandez toujours pourquoi vous devriez nous choisir ?</h2>
+                                <p data-aos="fade-up" data-aos-delay="200">
+                                    Avec beaucoup d'expérience, nos équipes travaillent quotidiennement pour concevoir
+                                    des logiciels dans le respect de deadline et de normes d'agilité.
+                                </p>
+                                <p data-aos="fade-up" data-aos-delay="200" >
+                                    Afrinewsoft vous garantie la sécurité et le respect de la vie privée sur l'ensemble des produits et servives qui vous sont fournis. <br>
+                                    Nous sommes disponnibles et permanents pour toute assistance technique sur les problèmes que nos utilisateurs rencontrent.
+                                </p>
+
+                                <p data-aos="fade-up" data-aos-delay="300"><a href="<?= site_url('why')?>" title="Pourquoi Afrinewsoft" class="btn btn-outline-light-bg has-arrow">En savoir plus
+                            <span class="icon-keyboard_backspace"></span></a>
+                        </p>
+
                             </div>
                         </div>
                     </div>

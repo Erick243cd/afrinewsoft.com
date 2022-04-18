@@ -2,11 +2,11 @@
 <html lang="<?= $links->lang ?>">
 
 <head>
-    <?php 
-        foreach ($links->metaHeader as $meta){
-         echo $meta;
-        }  
-     ?>
+    <?php
+    foreach ($links->metaHeader as $meta) {
+        echo $meta;
+    }
+    ?>
 
     <link rel="preconnect" href="https://fonts.gstatic.com/">
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&amp;display=swap" rel="stylesheet">
@@ -49,10 +49,10 @@
         <div class="container">
             <div class="menu-bg-wrap">
                 <div class="site-navigation">
-                    <?= img('public/logo.png', '', 'style="width:30px; heigth:"30px;" class="mb-3 pt-0 float-left"') ?>
-                    <a href="<?= site_url() ?>" class="logo m-0 float-left">frinewsoft</a>
+                    <?= img('public/logo.png', '', 'style="width:30px; heigth:"30px;" class="mb-3 pt-0 float-left" alt="logo afrinewsoft"') ?>
+                    <a href="<?= site_url() ?>" class="logo m-0 float-left" title="Page d'accueil Afrinewsoft">frinewsoft</a>
                     <ul class="js-clone-nav d-none d-lg-inline-block text-start site-menu float-end">
-                        <li class="active"><a href="<?= site_url() ?>">Home</a></li>
+                        <li class="<?= ($page == 'home') ? 'active' : '' ?>"><a href="<?= site_url() ?>" title="Page d'accueil Afrinewsoft"><?= $links->home ?></a></li>
                         <li class="has-children">
                             <a href="why.html">Why Stodeo</a>
                             <ul class="dropdown">
@@ -68,21 +68,21 @@
                                 </li>
                             </ul>
                         </li>
-                        <li><a href="services.html">Our Services</a></li>
-                        <li><a href="gallery.html">Gallery</a></li>
-                        <li><a href="about.html">About</a></li>
-                        <li><a href="contact.html">Contact Us</a></li>
+                        <li class="<?= ($page == 'services') ? 'active' : '' ?>"><a href="<?= site_url('services') ?>" title="Nos services Afrinewsoft"><?= $links->services ?></a></li>
+                        <li class="<?= ($page == 'gallery') ? 'active' : '' ?>"><a href="<?= site_url('gallery') ?>" title="Garlerie et photos d'équipe Afrinewsoft"><?= $links->gallery ?></a></li>
+                        <li class="<?= ($page == 'about') ? 'active' : '' ?>"><a href="<?= site_url('about') ?>" title="Apropos de nous Afrinewsoft"><?= $links->about ?></a></li>
+                        <li class="<?= ($page == 'contact') ? 'active' : '' ?>"><a href="<?= site_url('contact') ?>" title="Contactez Afrinewsoft"><?= $links->contact ?></a></li>
                     </ul>
-                    <a href="#" class="burger ms-auto mt-2 float-end site-menu-toggle js-menu-toggle d-inline-block d-lg-none" data-toggle="collapse" data-target="#main-navbar">
+                    <a href="#!" title="Menu" class="burger ms-auto mt-1 float-end site-menu-toggle js-menu-toggle d-inline-block d-lg-none" data-toggle="collapse" data-target="#main-navbar">
                         <span></span>
                     </a>
                 </div>
             </div>
         </div>
     </nav>
-    
 
-    <?= $this->renderSection('content');?>
+
+    <?= $this->renderSection('content'); ?>
 
 
     <div class="site-footer">
@@ -163,11 +163,11 @@
         </div>
     </div>
 
-    <?php 
-        foreach ($links->scriptLinks as $script){
-         echo $script;
-        }  
-     ?>
+    <?php
+    foreach ($links->scriptLinks as $script) {
+        echo $script;
+    }
+    ?>
 
     <script>
         eval(mod_pagespeed_kAo8TlUyVv);

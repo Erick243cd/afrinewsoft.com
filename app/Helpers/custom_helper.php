@@ -20,7 +20,12 @@ function headerData(?string $page, ?string $lang)
             <meta name="description" content="Free Web tutorials">
             <meta name="keywords" content="Afrinewsoft, Agence digital RDC, Startup Numérique de Lubumbashi">
             <meta name="author" content="Afrinewsoft Erick Banze">'
-        ]
+        ],
+        'home'=> ($lang === 'fr') ? 'Accueil' : 'Home',
+        'about'=> ($lang === 'fr') ? 'A propos' : 'About Us',
+        'services'=> ($lang === 'fr') ? 'Nos Services' : 'Our Services Us',
+        'contact'=> ($lang === 'fr') ? 'Contact' : 'Contact Us',
+        'gallery'=> ($lang === 'fr') ? 'Galerie' : 'Gallery',
     ];
 
     return (object)$data;
