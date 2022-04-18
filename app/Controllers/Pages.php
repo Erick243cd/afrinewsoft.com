@@ -1,23 +1,32 @@
 <?php
 
 namespace App\Controllers;
+use Config\UserAgents;
 
 class Pages extends BaseController
 {
     public function views($page = 'home')
     {
-        $lang = substr($_SERVER['HTTP_ACCEPT_LANGUAGE'], 0, 2);
         
-        $acceptLang = ['fr', 'en']; 
+        
+    
+        $lang = substr($_SERVER['HTTP_ACCEPT_LANGUAGE'], 0, 2);
+
+        $acceptLang = ['fr', 'en'];
 
         $lang = in_array($lang, $acceptLang) ? $lang : 'fr';
 
-        if (file_exists(APPPATH . 'views/pages/'.$lang.'/' . $page . '.php')) {
+        $agent = $this->request->getUserAgent();
+
+        if (file_exists(APPPATH . 'views/pages/' . $lang . '/' . $page . '.php')) {
             //Head and footer Links
-            $data = ['links' => headerData($page, $lang)]; 
+            $data = [
+                'links' => headerData($page, $lang),
+                'page' => $page,
+                'isMobile' => $agent->isMobile()
+            ];
 
-            return view('pages/'.$lang.'/' . $page, $data);
-
+            return view('pages/' . $lang . '/' . $page, $data);
         } else {
             return view('errors/404');
         }
