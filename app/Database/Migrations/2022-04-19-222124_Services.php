@@ -15,11 +15,19 @@ class Services extends Migration
                 'unsigned'       => true,
                 'auto_increment' => true,
             ],
-            'serviceName'       => [
+            'serviceName_fr'       => [
                 'type'       => 'VARCHAR',
                 'constraint' => '100',
             ],
-            'serviceDescription' => [
+            'serviceDescription_fr' => [
+                'type' => 'TEXT',
+                'null' => true,
+            ],
+            'serviceName_en'       => [
+                'type'       => 'VARCHAR',
+                'constraint' => '100',
+            ],
+            'serviceDescription_en' => [
                 'type' => 'TEXT',
                 'null' => true,
             ],

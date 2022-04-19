@@ -23,7 +23,8 @@ class Pages extends BaseController
             $data = [
                 'links' => headerData($page, $lang),
                 'page' => $page,
-                'isMobile' => $agent->isMobile()
+                'isMobile' => $agent->isMobile(),
+                'services' => ($page == 'home') ? $this->serviveModel->asObject()->findAll() : ''
             ];
 
             return view('pages/' . $lang . '/' . $page, $data);

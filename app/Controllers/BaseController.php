@@ -2,6 +2,7 @@
 
 namespace App\Controllers;
 
+use App\Models\ServiceModel;
 use CodeIgniter\Controller;
 use CodeIgniter\HTTP\CLIRequest;
 use CodeIgniter\HTTP\IncomingRequest;
@@ -54,5 +55,7 @@ class BaseController extends Controller
 
         // Autoload session library
         $this->session = \Config\Services::session();
+
+        $this->serviceModel = new ServiceModel();
     }
 }
