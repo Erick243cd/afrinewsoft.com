@@ -24,7 +24,7 @@ class Pages extends BaseController
                 'links' => headerData($page, $lang),
                 'page' => $page,
                 'isMobile' => $agent->isMobile(),
-                'services' => ($page == 'home') ? $this->serviveModel->asObject()->findAll() : ''
+                'services' => ($page == 'home' || $page=='services') ? $this->serviceModel->asObject()->limit(4)->find() : ''
             ];
 
             return view('pages/' . $lang . '/' . $page, $data);
