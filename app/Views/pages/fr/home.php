@@ -57,11 +57,11 @@
                     <p data-aos="fade-up" data-aos-delay="300"><a href="<?= site_url('why') ?>" title="Pourquoi afrinewsoft" class="btn btn-outline-light-bg has-arrow">Pourquoi Afrinewsoft <span class="icon-keyboard_backspace"></span></a></p>
                 </div>
             </div>
-            <div class="col-lg-9 ms-auto">
+            <div class="col-lg-9 ms-auto ">
                 <div class="box">
                     <div class="box-inner py-0">
                         <div class="row justify-content-center">
-                            <div class="col-lg-10 mt-5 p-2">
+                            <div class="col-lg-12 col-sm-12 mt-5 p-2">
                                 <span class="subheading d-block mb-3 text-uppercase" data-aos="fade-up">
                                     Pourquoi Afrinewsoft ?</span>
                                 <h2 class="heading mb-4" data-aos="fade-up" data-aos-delay="100">Vous vous demandez toujours pourquoi vous devriez nous choisir ?</h2>
@@ -85,7 +85,7 @@
                 <div class="row g-0">
                     <?php foreach ($services as $row) : ?>
                         <div class="col-6 col-xs-6 col-md-6 col-lg-3 ico" data-aos="fade-up" data-aos-delay="<?= $row->data_aos_delay ?>">
-                            <a href="<?= site_url('services')?>" class="feature" title="Afrinewsoft, Services">
+                            <a href="<?= site_url('services')?>" class="feature" title="Afrinewsoft-<?= $row->serviceName_fr ?>">
                                 <span class="<?= $row->serviceImage ?>"></span>
                                 <h3><?= $row->serviceName_fr ?></h3>
                                 <span class="arrow">
@@ -167,7 +167,7 @@
     </div>
 </div>
 <?php endif; ?>
-<?php if(!$isMobile) :?>
+<?php if($isMobile) :?>
 <div class="section pt-0">
     <div class="container">
         <div class="row justify-content-between">
@@ -176,7 +176,7 @@
                 <h3 class="heading mb-4">Couverture des événements </h3>
                 <div class="excerpt">
                     <p>Depuis le début de 'année 2022, <span class="highlight">Afrinewsoft s'est décidé de lancer</span>, there live the blind texts. Separated they live in
-                    Le service de photographie pour les grands événements comme les cérémonies de mariage, réunions, conférences, formations, etc.</p>
+                    le service de photographie pour les événements comme les cérémonies de mariage, réunions, conférences, formations, etc.</p>
 
                     <p class="mb-4">Nous vous appellons d'entrer sur la liste des nos clients afin d'immortaliser vos événements.</p>
                 </div>
@@ -192,16 +192,16 @@
                         </a>
                     </div>
                     <div class="col-lg-6 mb-4">
-                        <a href="#" class="service-v2 d-flex align-items-center">
+                        <a href="<?= site_url('contact') ?>" title="Contactez-nous" class="service-v2 d-flex align-items-center">
                             <div class="wrap-icon">
-                                <span class="icon-lock"></span>
+                                <span class="icon-paper-plane"></span>
                             </div>
                             <div class="contents">
-                                <h3>Conception graphique</h3>
+                                <h3>Traitement</h3>
                             </div>
                         </a>
                     </div>
-                    <div class="col-lg-6 mb-4">
+                    <!-- <div class="col-lg-6 mb-4">
                         <a href="#" class="service-v2 d-flex align-items-center">
                             <div class="wrap-icon">
                                 <span class="icon-home"></span>
@@ -220,100 +220,15 @@
                                 <h3>Production</h3>
                             </div>
                         </a>
-                    </div>
+                    </div> -->
                 </div>
             </div>
             <div class="col-lg-6" data-aos="fade-up" data-aos-delay="100">
-                <img src="images/img_2.jpg" alt="Image" class="img-fluid">
+                <?= img('public/assets/images/img_2.jpg', '', 'class="img-fluid"') ?>
             </div>
         </div>
     </div>
 </div>
 <?php endif; ?>
-<div class="section">
-    <div class="container">
-        <div class="row justify-content-center mb-5">
-            <div class="col-lg-7 text-center">
-                <span class="subheading">Testimonial</span>
-                <h3 class="heading mb-4">Happy Clients</h3>
-            </div>
-        </div>
-        <div class="row justify-content-center">
-            <div class="col-lg-8">
-                <div class="testimonial-slider-wrap">
-                    <div class="testimonial-slider" id="testimonial-slider">
-                        <div class="item">
-                            <div class="untree_co-testimonial text-center">
-                                <div class="img-wrap mb-4">
-                                    <img src="images/person_1.jpg" alt="Image" class="img-fluid mx-auto">
-                                </div>
-                                <blockquote>
-                                    <p>&ldquo;Far far away, behind the word mountains, far from the countries
-                                        Vokalia and Consonantia, there live the blind texts. Separated they live in
-                                        Bookmarksgrove right at the coast of the Semantics, a large language
-                                        ocean.&rdquo;</p>
-                                </blockquote>
-                                <div class="vcard">
-                                    <strong>Carl Anderson</strong>
-                                    <span class="d-block position">CEO, Co-Founder</span>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="item">
-                            <div class="untree_co-testimonial text-center">
-                                <div class="img-wrap mb-4">
-                                    <img src="images/person_2.jpg" alt="Image" class="img-fluid mx-auto">
-                                </div>
-                                <blockquote>
-                                    <p>&ldquo;Far far away, behind the word mountains, far from the countries
-                                        Vokalia and Consonantia, there live the blind texts. Separated they live in
-                                        Bookmarksgrove right at the coast of the Semantics, a large language
-                                        ocean.&rdquo;</p>
-                                </blockquote>
-                                <div class="vcard">
-                                    <strong>Carl Anderson</strong>
-                                    <span class="d-block position">CEO, Co-Founder</span>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="item">
-                            <div class="untree_co-testimonial text-center">
-                                <div class="img-wrap mb-4">
-                                    <img src="images/person_3.jpg" alt="Image" class="img-fluid mx-auto">
-                                </div>
-                                <blockquote>
-                                    <p>&ldquo;Far far away, behind the word mountains, far from the countries
-                                        Vokalia and Consonantia, there live the blind texts. Separated they live in
-                                        Bookmarksgrove right at the coast of the Semantics, a large language
-                                        ocean.&rdquo;</p>
-                                </blockquote>
-                                <div class="vcard">
-                                    <strong>Carl Anderson</strong>
-                                    <span class="d-block position">CEO, Co-Founder</span>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="item">
-                            <div class="untree_co-testimonial text-center">
-                                <div class="img-wrap mb-4">
-                                    <img src="images/person_4.jpg" alt="Image" class="img-fluid mx-auto">
-                                </div>
-                                <blockquote>
-                                    <p>&ldquo;Far far away, behind the word mountains, far from the countries
-                                        Vokalia and Consonantia, there live the blind texts. Separated they live in
-                                        Bookmarksgrove right at the coast of the Semantics, a large language
-                                        ocean.&rdquo;</p>
-                                </blockquote>
-                                <div class="vcard">
-                                    <strong>Carl Anderson</strong>
-                                    <span class="d-block position">CEO, Co-Founder</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
+
 <?= $this->endSection() ?>
