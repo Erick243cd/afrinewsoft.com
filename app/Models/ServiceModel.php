@@ -14,7 +14,7 @@ class ServiceModel extends Model
     // protected $returnType       = 'array';
     // protected $useSoftDeletes   = false;
     protected $protectFields    = true;
-    protected $allowedFields    = ['serviceName_fr','serviceName_en', 'serviceDescription_fr', 'serviceDescription_en', 'serviceImage'];
+    protected $allowedFields    = ['serviceName_fr','serviceName_en', 'serviceDescription_fr', 'serviceDescription_en', 'serviceImage', 'serviceSlug', 'serviceCover'];
 
     // Dates
     // protected $useTimestamps = false;
