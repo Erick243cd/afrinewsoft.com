@@ -36,10 +36,15 @@ class Services extends Migration
                 'null' => false,
                 'constraint' => '100'
             ],
-            'data_aos_delay' =>[
+            'data_aos_delay' => [
                 'type' => 'INT',
                 'null' => false,
                 'constraint' => '11'
+            ],
+            'service_cover' => [
+                'type' => 'VARCHAR',
+                'null' => false,
+                'constraint' => '100'
             ]
         ]);
 
