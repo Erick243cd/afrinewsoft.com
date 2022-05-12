@@ -40,6 +40,7 @@ $myroutes = [];
 
 $myroutes['dashboard'] = 'Pages::dashboard';
 $myroutes['views/(:segment)'] = 'Pages::views/$1';
+$myroutes['services/(:segment)'] = 'Services::service/$1';
 
 $routes->set404Override(function(){
     echo view('errors/404');
