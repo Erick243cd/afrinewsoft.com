@@ -41,7 +41,12 @@ class Services extends Migration
                 'null' => false,
                 'constraint' => '11'
             ],
-            'service_cover' => [
+            'serviceSlug' => [
+                'type' => 'VARCHAR',
+                'null' => false,
+                'constraint' => '100'
+            ],
+            'serviceCover' => [
                 'type' => 'VARCHAR',
                 'null' => false,
                 'constraint' => '100'
