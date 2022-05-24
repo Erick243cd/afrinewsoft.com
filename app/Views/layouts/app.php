@@ -14,6 +14,11 @@
     <?= $links->cssLinks ?>
     <title><?= $links->title ?></title>
     <?= $links->faveicon ?>
+    <style>
+        .custom-active {
+            text-decoration: overline;
+        }
+    </style>
 
     <script nonce="07dceb95-12c4-439a-927e-88f2c314a732">
         (function(w, d) {
@@ -50,28 +55,13 @@
             <div class="menu-bg-wrap">
                 <div class="site-navigation">
                     <?= img('public/logo.png', '', 'style="width:30px; heigth:"30px;" class="mb-3 pt-0 float-left" alt="logo afrinewsoft"') ?>
-                    <a href="<?= site_url() ?>" class="logo m-0 float-left" title="Page d'accueil Afrinewsoft">frinewsoft</a>
+                    <a href="<?= $page == 'home' ? '#' : site_url() ?>" class="logo m-0 float-left" title="Page d'accueil Afrinewsoft">frinewsoft</a>
                     <ul class="js-clone-nav d-none d-lg-inline-block text-start site-menu float-end">
-                        <li class="<?= ($page == 'home') ? 'active' : '' ?>"><a href="<?= site_url() ?>" title="Page d'accueil Afrinewsoft"><?= $links->home ?></a></li>
-                        <li class="has-children">
-                            <a href="why.html">Why Stodeo</a>
-                            <ul class="dropdown">
-                                <li><a href="#">Menu One</a></li>
-                                <li><a href="#">Menu Two</a></li>
-                                <li class="has-children">
-                                    <a href="#">Dropdown</a>
-                                    <ul class="dropdown">
-                                        <li><a href="#">Sub Menu One</a></li>
-                                        <li><a href="#">Sub Menu Two</a></li>
-                                        <li><a href="#">Sub Menu Three</a></li>
-                                    </ul>
-                                </li>
-                            </ul>
-                        </li>
-                        <li class="<?= ($page == 'services') ? 'active' : '' ?>"><a href="<?= site_url('services') ?>" title="Nos services Afrinewsoft"><?= $links->services ?></a></li>
-                        <li class="<?= ($page == 'gallery') ? 'active' : '' ?>"><a href="<?= site_url('gallery') ?>" title="Garlerie et photos d'équipe Afrinewsoft"><?= $links->gallery ?></a></li>
-                        <li class="<?= ($page == 'about') ? 'active' : '' ?>"><a href="<?= site_url('about') ?>" title="Apropos de nous Afrinewsoft"><?= $links->about ?></a></li>
-                        <li class="<?= ($page == 'contact') ? 'active' : '' ?>"><a href="<?= site_url('contact') ?>" title="Contactez Afrinewsoft"><?= $links->contact ?></a></li>
+                        <li class="<?= ($page == 'home') ? 'active custom-active' : '' ?>"><a href="<?= $page == 'home' ? '#' : site_url() ?>" title="Page d'accueil Afrinewsoft"><?= $links->home ?></a></li>
+                        <li class="<?= ($page == 'services' || $page == 'service_view') ? 'active custom-active' : '' ?>"><a href="<?= $page == 'services' ? '#' : site_url('services') ?>" title="Nos services Afrinewsoft"><?= $links->services ?></a></li>
+
+                        <li class="<?= ($page == 'about') ? 'active custom-active' : '' ?>"><a href="<?= site_url('about') ?>" title="Apropos de nous Afrinewsoft"><?= $links->about ?></a></li>
+                        <li class="<?= ($page == 'contact') ? 'active custom-active' : '' ?>"><a href="<?= $page == 'contact' ? '#' : site_url('contact') ?>" title="Contactez Afrinewsoft"><?= $links->contact ?></a></li>
                     </ul>
                     <a href="#!" title="Menu" class="burger ms-auto mt-1 float-end site-menu-toggle js-menu-toggle d-inline-block d-lg-none" data-toggle="collapse" data-target="#main-navbar">
                         <span></span>
@@ -109,13 +99,12 @@
                 </div>
                 <div class="col-lg-2 ms-auto">
                     <div class="widget">
-                        <h3>Navagation</h3>
+                        <h3>Navigation</h3>
                         <ul class="list-unstyled float-left links">
-                            <li><a href="#">HTML5</a></li>
-                            <li><a href="#">CSS3</a></li>
-                            <li><a href="#">jQuery</a></li>
-                            <li><a href="#">Bootstrap</a></li>
-                            <li><a href="#">Javascript</a></li>
+                            <li><a href="<?= $page == 'home' ? '#' : site_url() ?>"><?= $links->home ?></a></li>
+                            <li><a href="<?= $page == 'services' ? '#' : site_url('services') ?>"><?= $links->services ?></a></li>
+                            <li><a href="<?= $page == 'about' ? '#' : site_url('about') ?>"><?= $links->about ?></a></li>
+                            <li><a href="<?= $page == 'contact' ? '#' : site_url('contact') ?>"><?= $links->contact ?></a></li>
                         </ul>
                     </div>
                 </div>
@@ -123,10 +112,9 @@
                     <div class="widget">
                         <h3>Services</h3>
                         <ul class="list-unstyled float-left links">
-                            <li><a href="#">Web Design</a></li>
-                            <li><a href="#">eCommerce</a></li>
-                            <li><a href="#">WordPress</a></li>
-                            <li><a href="#">Frontend</a></li>
+                            <?php foreach ($services as $row) : ?>
+                                <li><a href="<?= site_url("services/$row->serviceSlug") ?>"><?= $lang == 'fr' ? $row->serviceName_fr : $row->serviceName_en ?></a></li>
+                            <?php endforeach ?>
                         </ul>
                     </div>
                 </div>
@@ -145,12 +133,11 @@
             </div>
             <div class="row mt-5">
                 <div class="col-12 text-center">
-                    opyright &copy;
+                    copyright &copy;
                     <script data-cfasync="false" src="../../cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script>
                     <script>
                         document.write(new Date().getFullYear());
-                    </script> All rights reserved | This template is
-                    made with <i class="icon-heart text-danger" aria-hidden="true"></i> by <a href="https://colorlib.com/" target="_blank" rel="nofollow noopener">Colorlib</a>
+                    </script> Afrinewsoft, <?= $lang == 'en' ? "All rights reserved " : "Tous droits reservés"?>
                 </div>
             </div>
         </div>

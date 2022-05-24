@@ -17,10 +17,11 @@ class Pages extends BaseController
             $data = [
                 'links' => headerData($page, localLang()),
                 'page' => $page,
+                'lang' => localLang(),
                 'isMobile' => $agent->isMobile(),
-                'services' => ($page == 'home' || $page == 'services') ? $this->serviceModel->asObject()->limit($limit)->find() : ''
+                'services' => ($page == 'home' || $page == 'services') ? $this->serviceModel->asObject()->limit($limit)->find() : $this->serviceModel->asObject()->limit($limit)->find()
             ];
-
+            
             return view('pages/' . localLang() . '/' . $page, $data);
         } else {
             return view('errors/404');

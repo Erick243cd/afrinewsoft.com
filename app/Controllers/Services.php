@@ -21,6 +21,7 @@ class Services extends BaseController
             $agent = $this->request->getUserAgent();
             $data = [
                 'service' => $service,
+                'page'=> $page,
                 'links' => headerData($page, localLang()),
                 'isMobile' => $agent->isMobile(),
             ];

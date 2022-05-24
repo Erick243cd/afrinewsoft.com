@@ -11,7 +11,7 @@
 						 Nous vous donnons l'occasion de nous confier vos projets, car notre objectif est de vous accompagner.
 						
 					</p>
-					<p data-aos="fade-up" data-aos-delay="300"><a href="<?= site_url('/contact')?>"title="Contactez Afrinewsoft" class="btn btn-primary">Contactez-nous</a></p>
+					<p data-aos="fade-up" data-aos-delay="300"><a href="<?= site_url('/contact')?>"title="Contactez Afrinewsoft" class="btn btn-primary">Entrez en contact avec nous</a></p>
 				</div>
 				<?php if (!$isMobile) : ?>
 					<div class="col-lg-4">
@@ -29,7 +29,9 @@
                 <?php foreach ($services as $row) : ?>
                         <div class="col-6 col-xs-6 col-md-6 col-lg-3  py-0 px-0" data-aos="fade-up" data-aos-delay="<?= $row->data_aos_delay ?>">
                             <a href="<?= site_url("services/$row->serviceSlug")?>" class="feature" title="Afrinewsoft-<?= $row->serviceName_fr ?>">
-                                <span class="<?= $row->serviceImage ?>"></span>
+                                
+							<?=  img('public/assets/images/services/icons/'.$row->serviceImage.'' , '', 'alt="Afrinewsoft-<?= $row->serviceName_fr ?>"') ?>
+							
                                 <h3><?= $row->serviceName_fr ?></h3>
                                 <span class="arrow">
                                     <span class="icon-keyboard_backspace"></span>
@@ -37,79 +39,6 @@
                             </a>
                         </div>
                 <?php endforeach ?>
-
-				<!-- <div class="col-6 col-xs-6 col-md-6 col-lg-3" data-aos="fade-up">
-					<a href="#" class="feature">
-						<span class="flaticon-credit-card"></span>
-						<h3>Web Design</h3>
-						<span class="arrow">
-							<span class="icon-keyboard_backspace"></span>
-						</span>
-					</a>
-				</div>
-				<div class="col-6 col-xs-6 col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="100">
-					<a href="#" class="feature">
-						<span class="flaticon-stats"></span>
-						<h3>Web Development</h3>
-						<span class="arrow">
-							<span class="icon-keyboard_backspace"></span>
-						</span>
-					</a>
-				</div>
-				<div class="col-6 col-xs-6 col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="200">
-					<a href="#" class="feature">
-						<span class="flaticon-trophy"></span>
-						<h3>Branding &amp; Identity</h3>
-						<span class="arrow">
-							<span class="icon-keyboard_backspace"></span>
-						</span>
-					</a>
-				</div>
-				<div class="col-6 col-xs-6 col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="300">
-					<a href="#" class="feature">
-						<span class="flaticon-idea"></span>
-						<h3>Graphic Design</h3>
-						<span class="arrow">
-							<span class="icon-keyboard_backspace"></span>
-						</span>
-					</a>
-				</div>
-				<div class="col-6 col-xs-6 col-md-6 col-lg-3" data-aos="fade-up">
-					<a href="#" class="feature">
-						<span class="flaticon-startup"></span>
-						<h3>Web Design</h3>
-						<span class="arrow">
-							<span class="icon-keyboard_backspace"></span>
-						</span>
-					</a>
-				</div>
-				<div class="col-6 col-xs-6 col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="100">
-					<a href="#" class="feature">
-						<span class="flaticon-chess"></span>
-						<h3>Web Development</h3>
-						<span class="arrow">
-							<span class="icon-keyboard_backspace"></span>
-						</span>
-					</a>
-				</div>
-				<div class="col-6 col-xs-6 col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="200">
-					<a href="#" class="feature">
-						<span class="flaticon-trophy"></span>
-						<h3>Branding &amp; Identity</h3>
-						<span class="arrow">
-							<span class="icon-keyboard_backspace"></span>
-						</span>
-					</a>
-				</div>
-				<div class="col-6 col-xs-6 col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="300">
-					<a href="#" class="feature">
-						<span class="flaticon-idea"></span>
-						<h3>Graphic Design</h3>
-						<span class="arrow">
-							<span class="icon-keyboard_backspace"></span>
-						</span>
-					</a>
-				</div> -->
 			</div>
 		</div>
 	</div>
