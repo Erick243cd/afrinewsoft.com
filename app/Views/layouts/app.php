@@ -137,7 +137,7 @@
                     <script data-cfasync="false" src="../../cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script>
                     <script>
                         document.write(new Date().getFullYear());
-                    </script> Afrinewsoft, <?= $lang == 'en' ? "All rights reserved " : "Tous droits reservés"?>
+                    </script> Afrinewsoft, <?= $lang == 'en' ? "All rights reserved " : "Tous droits reservés" ?>
                 </div>
             </div>
         </div>
@@ -184,6 +184,12 @@
         gtag('config', 'UA-23581568-13');
     </script>
     <script defer src="https://static.cloudflareinsights.com/beacon.min.js/v652eace1692a40cfa3763df669d7439c1639079717194" integrity="sha512-Gi7xpJR8tSkrpF7aordPZQlW2DLtzUlZcumS8dMQjwDHEnw9I7ZLyiOj/6tZStRBGtGgN6ceN6cMH8z7etPGlw==" data-cf-beacon='{"rayId":"6fa405d7bb789cfe","token":"cd0b4b3a733644fc843ef0b185f98241","version":"2021.12.0","si":100}' crossorigin="anonymous"></script>
+    <!-- Customisation -->
+    <script>
+        $('#contact-btn').click(function(){
+            alert('success')
+        })
+    </script>
 </body>
 
 </html>

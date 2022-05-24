@@ -23,7 +23,9 @@ class Services extends BaseController
                 'service' => $service,
                 'page'=> $page,
                 'links' => headerData($page, localLang()),
+                'lang'=>localLang(),
                 'isMobile' => $agent->isMobile(),
+                'services' => $this->serviceModel->asObject()->find()   
             ];
 
             return view('pages/' . localLang() . '/' . $page, $data);

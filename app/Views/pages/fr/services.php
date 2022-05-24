@@ -3,23 +3,21 @@
 <div class="hero bg-light">
 		<div class="container">
 			<div class="row justify-content-center">
-				<div class="<?= ($isMobile) ? 'col-lg-7' : 'col-lg-6' ?> text-center">
+				<div class="col-lg-6 text-center">
 					<span class="subheading d-block mb-2 text-uppercase" data-aos="fade-up">Services</span>
 					<h1 class="heading mb-4" data-aos="fade-up" data-aos-delay="100">Nos Services</h1>
 					<p class="w-75 mx-auto mb-5" data-aos="fade-up" data-aos-delay="200">
-						Avec beaucoup d'années d'expériences dans la fourniture de produits et services informatiques,
+						Avec beaucoup d'expériences dans la conception et fourniture de produits et services informatiques,
 						 Nous vous donnons l'occasion de nous confier vos projets, car notre objectif est de vous accompagner.
 						
 					</p>
 					<p data-aos="fade-up" data-aos-delay="300"><a href="<?= site_url('/contact')?>"title="Contactez Afrinewsoft" class="btn btn-primary">Entrez en contact avec nous</a></p>
 				</div>
-				<?php if (!$isMobile) : ?>
-					<div class="col-lg-4">
-						<div class="img-fluid rounded mt-5">
-							<?= img('public/assets/images/services-img.webp', '', 'class="img-fluid" alt="Afrinewsoft home picture" data-aos="fade-up"  data-aos-delay="200" style="border-radius:5px"') ?>
-						</div>
+				<div class="col-lg-4">
+					<div class="img-fluid rounded mt-5">
+						<?= img('public/assets/images/services-img.webp', '', 'class="img-fluid" alt="Afrinewsoft home picture" data-aos="fade-up"  data-aos-delay="200" style="border-radius:5px"') ?>
 					</div>
-            	<?php endif; ?>
+				</div>
 			</div>
 		</div>
 	</div>
