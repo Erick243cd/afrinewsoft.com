@@ -35,14 +35,17 @@ $routes->setAutoRoute(true);
 $routes->get('/', 'Pages::views');
 $routes->get('/(:segment)', 'Pages::views/$1');
 $routes->get('pages/(:segement)', 'Pages::views/$1');
+$routes->post('client-contact', 'Contacts::contactFromWebsite');
 
 $myroutes = [];
 
 $myroutes['dashboard'] = 'Pages::dashboard';
 $myroutes['views/(:segment)'] = 'Pages::views/$1';
 $myroutes['services/(:segment)'] = 'Services::service/$1';
+//$myroutes['client-contact'] = 'Contacts::contactFromWebsite';
 
-$routes->set404Override(function(){
+
+$routes->set404Override(function () {
     echo view('errors/404');
 });
 

@@ -15,17 +15,18 @@ class Services extends BaseController
 
     public function service($serviceSlug)
     {
-        $service =$this->serviceModel->asObject()->where('serviceSlug', $serviceSlug)->first();
+        $service = $this->serviceModel->asObject()->where('serviceSlug', $serviceSlug)->first();
         if (!empty($service)) {
             $page = "service_view";
             $agent = $this->request->getUserAgent();
             $data = [
                 'service' => $service,
-                'page'=> $page,
+                'page' => $page,
+                'nearServices' => $this->serviceModel->asObject()->where('serviceSlug !=', $serviceSlug)->findAll(10),
                 'links' => headerData($page, localLang()),
-                'lang'=>localLang(),
+                'lang' => localLang(),
                 'isMobile' => $agent->isMobile(),
-                'services' => $this->serviceModel->asObject()->find()   
+                'services' => $this->serviceModel->asObject()->find()
             ];
 
             return view('pages/' . localLang() . '/' . $page, $data);

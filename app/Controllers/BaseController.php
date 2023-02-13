@@ -2,6 +2,7 @@
 
 namespace App\Controllers;
 
+use App\Models\ContactModel;
 use App\Models\ServiceModel;
 use CodeIgniter\Controller;
 use CodeIgniter\HTTP\CLIRequest;
@@ -55,7 +56,12 @@ class BaseController extends Controller
 
         // Autoload session library
         $this->session = \Config\Services::session();
+        $this->email = \Config\Services::email();
+        $this->validation = \Config\Services::validation();
 
         $this->serviceModel = new ServiceModel();
+        $this->contactModel = new ContactModel();
+
+
     }
 }
