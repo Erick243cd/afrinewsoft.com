@@ -47,7 +47,7 @@ class Email extends BaseConfig
      *
      * @var string
      */
-    public $SMTPHost = 'server.nitrowebhost.co.uk';
+    public $SMTPHost = 'mail.afrinewsoft.com';//'server.nitrowebhost.co.uk';
 
     /**
      * SMTP Username

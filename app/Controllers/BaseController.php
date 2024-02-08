@@ -51,7 +51,7 @@ class BaseController extends Controller
 
         // E.g.: $this->session = \Config\Services::session();
 
-        // Autoload helpers
+        // AutoGload helpers
         helper(['url', 'form', 'html', 'text', 'custom']);
 
         // Autoload session library

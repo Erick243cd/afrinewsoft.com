@@ -72,7 +72,7 @@ class Contacts extends BaseController
 
     function sendMail($data)
     {
-        $to = 'client@afrinewsoft.com';
+        $to = 'info@afrinewsoft.com';
         $contents = "{$data->contactMessage}";
         $this->email->setFrom('contact@afrinewsoft.com', "{$data->contactName}");
         $this->email->setTo($to);

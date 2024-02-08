@@ -29,7 +29,7 @@
             <div class="row g-0 align-items-stretch">
                 <div class="col-lg-6" data-aos="fade-right">
                     <div class="img">
-                        <?= img('public/assets/images/peoples/home-afrinewsoft.webp', '', 'class="img-fluid" alt="Afrinewsoft home picture" loading="lazy"') ?>
+                        <?= img('public/assets/images/peoples/home-afrinewsoft.webp', '', 'class="img-fluid" alt="Afrinewsoft home picture"') ?>
                     </div>
                 </div>
                 <?php if (!$isMobile): ?>
